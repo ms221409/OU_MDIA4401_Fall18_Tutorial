@@ -4,38 +4,50 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerShooter : MonoBehaviour 
+public class PlayerShooter : MonoBehaviour  
 {
-	public GameObject bulletPrefab;
-	public Transform bulletSourceTransform;
-	public int ammoRemaining = 10;
-	public Text ammoLabel;
+    public GameObject bulletPrefab;
+    public Transform spawnPoint;
+    public Text ammoCountText;
+    public int remainingAmmo = 10;
 
-
+	
 	// Update is called once per frame
-	void Update ()
-	{
-		if (Input.GetKeyDown (KeyCode.Space))
-		{
-			if (ammoRemaining > 0)
-				ShootBullet ();
-		}
+	void Update () 
+    {
+        if (Input.GetKeyDown (KeyCode.Space))
+        {
+            if (remainingAmmo > 0)
+            {
+                SpawnBullet ();
+            }
+        }
 	}
 
 
-	void ShootBullet ()
-	{
-		GameObject thisBullet = Instantiate (bulletPrefab, bulletSourceTransform.position, Quaternion.identity);
-		thisBullet.transform.localEulerAngles = transform.localEulerAngles;
 
-		ammoRemaining -= 1;
-		ammoLabel.text = ammoRemaining.ToString ();
-	}
+    void SpawnBullet()
+    {
+        Instantiate(bulletPrefab, spawnPoint.position, transform.rotation);
 
 
-	public void RefillAmmo (int ammoAmount)
-	{
-		ammoRemaining += 4;
-		ammoLabel.text = ammoRemaining.ToString ();
-	}
+        ChangeAmmo(-1);
+        //remainingAmmo -= 1;
+       // ammoCountText.text = remainingAmmo.ToString ();
+    }
+
+
+
+    public void ChangeAmmo (int amountToAdd)
+    {
+        remainingAmmo += amountToAdd;
+        ammoCountText.text = remainingAmmo.ToString();
+    }
+
+
+
+    void Start()
+    {
+        ammoCountText.text = remainingAmmo.ToString();
+    }
 }
