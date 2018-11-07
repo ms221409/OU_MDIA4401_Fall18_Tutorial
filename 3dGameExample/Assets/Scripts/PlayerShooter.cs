@@ -10,6 +10,7 @@ public class PlayerShooter : MonoBehaviour
     public Transform spawnPoint;
     public Text ammoCountText;
     public int remainingAmmo = 10;
+    public AmmoPooler ammoPooler;
 
 	
 	// Update is called once per frame
@@ -26,9 +27,10 @@ public class PlayerShooter : MonoBehaviour
 
 
 
-    void SpawnBullet()
+    void SpawnBullet ()
     {
-        Instantiate(bulletPrefab, spawnPoint.position, transform.rotation);
+        //Instantiate (bulletPrefab, spawnPoint.position, transform.rotation);
+        ammoPooler.SpawnBullet (spawnPoint);
 
 
         ChangeAmmo(-1);

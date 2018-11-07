@@ -176,7 +176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &218752044
 GameObject:
@@ -309,7 +309,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player Root
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -337,7 +337,7 @@ Transform:
   m_Children:
   - {fileID: 1073446659}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &445465298
 NavMeshAgent:
@@ -376,6 +376,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1340021970}
   ammoCountText: {fileID: 1961671354}
   remainingAmmo: 10
+  ammoPooler: {fileID: 1178117327}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +538,7 @@ RectTransform:
   - {fileID: 324508593}
   - {fileID: 1961671352}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -604,7 +605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922205806
 GameObject:
@@ -794,6 +795,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1178117326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1178117328}
+  - component: {fileID: 1178117327}
+  m_Layer: 0
+  m_Name: Ammo Pooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1178117327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178117326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8bcf309cf424a34b9e992822dada86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 50
+  bulletPrefab: {fileID: 1089513568178682, guid: 7e5c82c29f9964b68abe15a7074ad4d6,
+    type: 2}
+  bulletPool: []
+--- !u!4 &1178117328
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178117326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1262793159
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +926,7 @@ Transform:
   - {fileID: 922205810}
   - {fileID: 2016572604}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340021969
 GameObject:
@@ -894,7 +939,7 @@ GameObject:
   m_Layer: 0
   m_Name: Bullet Spawn Point
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -965,7 +1010,7 @@ Transform:
   m_Children:
   - {fileID: 1521679044}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418837112
 GameObject:

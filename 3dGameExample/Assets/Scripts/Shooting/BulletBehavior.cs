@@ -10,9 +10,9 @@ public class BulletBehavior : MonoBehaviour
 
 
 	// Use this for initialization
-	void Start () 
+	void OnEnable () 
     {
-        Invoke("Despawn", bulletLifetime);
+        Invoke ("Despawn", bulletLifetime);
 	}
 	
 
@@ -26,6 +26,7 @@ public class BulletBehavior : MonoBehaviour
 
     void Despawn ()
     {
-        Destroy (gameObject);
+        //Destroy (gameObject);
+        gameObject.SetActive (false);
     }
 }
