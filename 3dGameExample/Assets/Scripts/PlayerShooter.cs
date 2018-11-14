@@ -11,6 +11,7 @@ public class PlayerShooter : MonoBehaviour
     public Text ammoCountText;
     public int remainingAmmo = 10;
     public AmmoPooler ammoPooler;
+    public AudioSource bulletAudioSource;
 
 	
 	// Update is called once per frame
@@ -29,13 +30,11 @@ public class PlayerShooter : MonoBehaviour
 
     void SpawnBullet ()
     {
-        //Instantiate (bulletPrefab, spawnPoint.position, transform.rotation);
         ammoPooler.SpawnBullet (spawnPoint);
-
-
         ChangeAmmo(-1);
-        //remainingAmmo -= 1;
-       // ammoCountText.text = remainingAmmo.ToString ();
+
+
+        bulletAudioSource.Play();
     }
 
 

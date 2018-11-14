@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class AmmoPooler : MonoBehaviour 
 {
+    [Range (5, 50)]
     public int poolSize = 50;
     public GameObject bulletPrefab;
 
+    [Tooltip ("ARRAY")]
     public GameObject [] bulletPool;
 
 

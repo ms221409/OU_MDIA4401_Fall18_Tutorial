@@ -7,11 +7,13 @@ public class AmmoPickup : MonoBehaviour
 {
     public int ammoInBox = 5;
     public float rotationSpeed = 50;
+    public AudioSource ammoPickupAudioSource;
 
 
     void OnTriggerEnter (Collider playerCollider)
     {
         playerCollider.transform.parent.GetComponent<PlayerShooter>().ChangeAmmo (ammoInBox);
+        ammoPickupAudioSource.Play();
         Destroy(gameObject);
     }
 
