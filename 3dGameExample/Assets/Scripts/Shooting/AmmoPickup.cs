@@ -12,7 +12,7 @@ public class AmmoPickup : MonoBehaviour
 
     void OnTriggerEnter (Collider playerCollider)
     {
-        playerCollider.transform.parent.GetComponent<PlayerShooter>().ChangeAmmo (ammoInBox);
+        playerCollider.transform.GetComponent<PlayerShooter>().ChangeAmmo (ammoInBox);
         ammoPickupAudioSource.Play();
         Destroy(gameObject);
     }
